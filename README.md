@@ -180,7 +180,6 @@ Here is the list of all possible options, in Matlab format. When an option can b
 | `opt[.modality{m}].gmm.do`               | `true`       | Optimise intensity priors
 | `opt[.modality{m}].gmm.K`                | `Ka`         | Number of Gaussian clusers
 | `opt[.modality{m}].gmm.mix`              | `eye(Ka,K)`  | Map tissues to clusters (+ mixing dirichlet prior)
-| `opt[.modality{m}].gmm.missing`          | `true`       | Infer missing values
 | `opt[.modality{m}].gmm.constr`           | `false`      | Constrained precision matrices
 | `opt[.modality{m}].gmm.iter`             | `20`         | Number of sub-EM iterations
 | `opt[.modality{m}].gmm.init`             | `'kmeans'`   | Cluster initialisation | `'kmeans'`, `'gmm'`
@@ -191,8 +190,14 @@ Here is the list of all possible options, in Matlab format. When an option can b
 | `opt[.modality{m}].gmm[.cluster{k}].b0`  | `K`          | Prior mean degrees of freedom
 | `opt[.modality{m}].gmm[.cluster{k}].A0`  | `'kmeans'`   | Prior precision
 | `opt[.modality{m}].gmm[.cluster{k}].n0`  | `K`          | Prior precision degrees of freedom
+| `opt[.modality{m}].gmm.missing.do`       | `true`       | Infer missing values
+| `opt[.modality{m}].gmm.missing.val`      | `NaN`        | Voxel considered missing if value in this set
+| `opt[.modality{m}].gmm.missing.valp`     | `Inf`        | Voxel considered missing if value above= this threshold
+| `opt[.modality{m}].gmm.missing.valm`     | `-Inf`       | Voxel considered missing if value below= this threshold
 
-- **Note:** `Ka` is the number of tissue classes in the template.
+- **Note 1:** `Ka` is the number of tissue classes in the template.
+- **Note 2:** If `modality.name == MRI` then `missing.val = [NaN 0]`.
+- **Note 3:** If `modality.name == CT` then `missing.valp = 3000` and `missing.valm = -1000`.
 
 ### General algorithm
 
