@@ -166,6 +166,8 @@ Here is the list of all possible options, in Matlab format. When an option can b
 | `opt[.modality{m}][.channel{c}].bias.prm`    | `1e-4` | Bending regularisation
 | `opt[.modality{m}][.channel{c}].bias.gn`     | `1`    | Number of Gauss-Newton updates
 | `opt[.modality{m}][.channel{c}].bias.ls`     | `6`    | Number of Line-Search steps
+| `opt[.modality{m}][.channel{c}].bias.init`   | `'median'` | Method to initialse global scaling | `'median'`, `'mean'`
+| `opt[.modality{m}][.channel{c}].bias.val0`   | `8192` | Value to match with the mean or median
 | `opt[.modality{m}][.channel{c}].bias.center` | `true` | Zero-Center bias fields
 | `opt[.modality{m}][.channel{c}].bias.write`  | `true` | Write bias field (at the end) 
 
