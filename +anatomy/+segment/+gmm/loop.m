@@ -62,7 +62,7 @@ function [Z,cluster,prop,lb] = loop(obs, cluster, prop, varargin)
 % lb      - Structure with fields: sum, last, X, Z, P, MU, A
 % 
 %__________________________________________________________________________
-% Copyright (C) 2018 Wellcome Centre for Human Neuroimaging
+% Copyright (C) 2019 Wellcome Centre for Human Neuroimaging
 
 import anatomy.segment.gmm.*    % lib
 
